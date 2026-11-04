@@ -4,6 +4,7 @@ import Quickshell.Io
 import qs.Common
 import qs.Services
 import qs.Widgets
+import qs.DCommon.Widgets as DCommon
 import qs.Modules.Plugins
 
 PluginComponent {
@@ -106,7 +107,7 @@ PluginComponent {
         Row {
             spacing: Theme.spacingXS
 
-            DankIcon {
+            DCommon.DIcon {
                 name: "inventory_2"
                 size: root.iconSize
                 color: root.storeSizeGB > root.gcThresholdGB ? Theme.error : Theme.primary
@@ -147,7 +148,7 @@ PluginComponent {
                 visible: root.showStoreSize
             }
 
-            DankIcon {
+            DCommon.DIcon {
                 name: "check"
                 size: root.iconSize * 0.8
                 color: root.canCompareVersions ? (root.isUpToDate ? Theme.success : Theme.warning) : Theme.error
@@ -161,7 +162,7 @@ PluginComponent {
         Column {
             spacing: Theme.spacingXS
 
-            DankIcon {
+            DCommon.DIcon {
                 name: "inventory_2"
                 size: root.iconSize
                 color: root.storeSizeGB > root.gcThresholdGB ? Theme.error : Theme.primary
@@ -184,7 +185,7 @@ PluginComponent {
                 visible: root.showStoreSize
             }
 
-            DankIcon {
+            DCommon.DIcon {
                 name: "check"
                 size: root.iconSize * 0.8
                 color: root.canCompareVersions ? (root.isUpToDate ? Theme.success : Theme.warning) : Theme.error
@@ -224,7 +225,7 @@ PluginComponent {
                                 anchors.centerIn: parent
                                 spacing: Theme.spacingXS
 
-                                DankIcon {
+                                DCommon.DIcon {
                                     name: "history"
                                     size: 32
                                     color: Theme.primary
@@ -258,7 +259,7 @@ PluginComponent {
                                 anchors.centerIn: parent
                                 spacing: Theme.spacingXS
 
-                                DankIcon {
+                                DCommon.DIcon {
                                     name: "storage"
                                     size: 32
                                     color: root.storeSizeGB > root.gcThresholdGB ? Theme.error : Theme.primary
@@ -300,7 +301,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankIcon {
+                                DCommon.DIcon {
                                     name: root.canCompareVersions ? (root.isUpToDate ? "check_circle" : "update") : "error"
                                     size: Theme.iconSize
                                     color: root.canCompareVersions ? (root.isUpToDate ? Theme.success : Theme.warning) : Theme.error
@@ -370,7 +371,7 @@ PluginComponent {
                             anchors.centerIn: parent
                             spacing: Theme.spacingS
 
-                            DankIcon {
+                            DCommon.DIcon {
                                 name: "warning"
                                 size: Theme.iconSize
                                 color: Theme.onErrorContainer
@@ -406,7 +407,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankButton {
+                                DCommon.DButton {
                                     width: (parent.width - Theme.spacingS) / 2
                                     text: "Refresh"
                                     iconName: "refresh"
@@ -416,7 +417,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankButton {
+                                DCommon.DButton {
                                     width: (parent.width - Theme.spacingS) / 2
                                     text: root.operationRunning && root.runningOperation === "gc" ? "Running..." : "GC"
                                     iconName: "cleaning_services"
@@ -433,7 +434,7 @@ PluginComponent {
                                 width: parent.width
                                 spacing: Theme.spacingS
 
-                                DankButton {
+                                DCommon.DButton {
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     text: root.operationRunning && root.runningOperation === "updateFlake" ? "Updating..." : "Update"
                                     iconName: "download"
@@ -445,7 +446,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankButton {
+                                DCommon.DButton {
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     text: root.operationRunning && root.runningOperation === "rebuild" ? "Building..." : "Switch"
                                     iconName: "build"
@@ -457,7 +458,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankButton {
+                                DCommon.DButton {
                                     width: (parent.width - Theme.spacingS * 2) / 3
                                     text: root.operationRunning && root.runningOperation === "rebuildBoot" ? "Building..." : "Boot"
                                     iconName: "restart_alt"
@@ -525,7 +526,7 @@ PluginComponent {
                                 height: 1
                             }
 
-                            DankButton {
+                            DCommon.DButton {
                                 id: cancelButton
                                 text: "Cancel"
                                 iconName: "cancel"
@@ -539,7 +540,7 @@ PluginComponent {
                                 }
                             }
 
-                            DankButton {
+                            DCommon.DButton {
                                 id: clearButton
                                 text: "Clear"
                                 iconName: "close"
